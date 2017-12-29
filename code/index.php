@@ -1,3 +1,2 @@
-<?php
-phpinfo();
-?>
+
+<img src="whoa.gif">
