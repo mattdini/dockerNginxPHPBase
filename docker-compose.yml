@@ -2,7 +2,9 @@ version: '2'
 
 services:
     web:
-        image: nginx:latest
+        build:
+            context: ./
+            dockerfile: nginx.dockerfile
         ports:
             - "81:80"
         volumes:
@@ -11,7 +13,9 @@ services:
         networks:
             - code-network
     php:
-        image: php:fpm
+        build:
+            context: ./
+            dockerfile: phpserver.dockerfile
         volumes:
             - ./code:/code
             - ./log.conf:/usr/local/etc/php-fpm.d/zz-log.conf
